@@ -12,7 +12,6 @@ const ColorGreen = 1;
 const ColorBlue = 2;
 
 //ts, obj oriented way
-
 enum Color {
   Red = 0,
   Green = 1,
@@ -20,3 +19,4 @@ enum Color {
 };
 
 let backgroundColor = Color.Red;
+// like most enum, ts enum will auto assign sequential numbers to vals in array
