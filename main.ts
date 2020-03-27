@@ -1,21 +1,3 @@
-let drawPoint = (x, y) => {
-  // ...
-}
-
-//instead of passing many props, pass 1 obj w/ all related props
-let drawPoint = (point) => {
-  // ...
-}
-
-drawPoint({
-  x: 1,
-  y: 2
-})
-
-//inline notation kind of solves, but is verbose
-let drawPoint = (point: {x: number, y: number}) => {
-  // ...
-}
 
 //interfaces are prefered
 interface Point {
@@ -27,3 +9,21 @@ interface Point {
 let drawPoint = (point: Point) => {
   // ...
 }
+
+//but these two should live together according to cohesion principle we need a class instead
+class Point {
+  x: number;
+  y: number;
+
+  draw() {
+    // ...
+  }
+
+  getDistance(another: Point) {
+    // ...
+  }
+}
+
+//now all like things live together
+//like in other strongy typed languages, functions in a class are called methods
+//no need to pass point obj param to methods because they can access the point obj properties nativel
