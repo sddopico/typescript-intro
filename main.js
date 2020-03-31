@@ -1,17 +1,18 @@
-var log = function (message) {
-    console.log(message);
-};
-//arrow style
-var doLog = function (message) {
-    console.log(message);
-};
-//another (less readable) formulation of arrow style
-var goLog = function (message) {
-    console.log(message);
-};
-//yet another formulation
-var coLog = function (message) { return console.log(message); };
-//and another (less readable)
-var foLog = function (message) { return console.log(message); };
-//with no params
-var feuxLog = function () { return console.log(); };
+var Point = /** @class */ (function () {
+    function Point() {
+    }
+    Point.prototype.draw = function () {
+        console.log("X: " + this.x + ", Y: " + this.y);
+    };
+    Point.prototype.getDistance = function (another) {
+        // ...
+    };
+    return Point;
+}());
+// create new point object
+var point1 = new Point;
+// assign values
+point1.x = 1;
+point1.y = 2;
+// draw new point
+point1.draw();
