@@ -10,16 +10,9 @@ export class LikeButton {
         _selButton = false;
     }
     pressButton() {
-        if (this._selButton == true) {
-            this._selButton = !this._selButton;
-            this._likes--;
-            console.log(`${this._likes} likes, Button selected?: ${this._selButton}`);
-        }
-        else {
-            this._selButton = !this._selButton;
-            this._likes++;
-            console.log(`${this._likes} likes, Button selected?: ${this._selButton}`);
-        }
+        this._likes += (this._selButton) ? 1 : -1;
+        this._selButton = !this._selButton;
+        console.log(`${this._likes} likes, Button selected?: ${this._selButton}`);
     }
     get likes() {
         return this._likes;

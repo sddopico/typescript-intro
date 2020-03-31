@@ -11,15 +11,9 @@ export class LikeButton {
   }
 
   pressButton() {
-    if (this._selButton == true) {
-      this._selButton = !this._selButton;
-      this._likes--;
-      console.log(`${this._likes} likes, Button selected?: ${this._selButton}`);
-    } else {
-      this._selButton = !this._selButton;
-      this._likes++;
-      console.log(`${this._likes} likes, Button selected?: ${this._selButton}`);
-    }
+    this._likes += (this._selButton) ? 1 : -1;
+    this._selButton = !this._selButton;
+    console.log(`${this._likes} likes, Button selected?: ${this._selButton}`);
   }
 
   get likes() {
@@ -28,7 +22,7 @@ export class LikeButton {
 
   set likes(value) {
     if (value > 0) {
-      throw new Error('Likes value must be greater than 0')
+      throw new Error('Likes value must be greater than 0');
     }
     this._likes = value;
   }
