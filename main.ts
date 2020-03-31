@@ -12,7 +12,7 @@ class Point {
   }
 }
 
-// create new point object
+// this way of instantiating an object is verbose in ts 
 let point1 = new Point;
 
 // assign values
