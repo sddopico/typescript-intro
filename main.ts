@@ -1,29 +1,29 @@
 
 class Point {
-  constructor(private x?: number, private y?: number) {
+  //prefix field variable names w/ '_'
+  constructor(private _x?: number, private _y?: number) {
 
   }
 
   draw() {
-    console.log(`X: ${this.x}, Y: ${this.y}`);
+    console.log(`X: ${this._x}, Y: ${this._y}`);
   }
 
   // getters and setters expose fields to user, must use capital letter
-  get X() {
-    return this.x;
+  get x() {
+    return this._x;
   }
 
-  set X(value) {
+  set x(value) {
     if (value < 0)
       throw new Error('value cannot be less than 0.');
 
-    this.x = value;
+    this._x = value;
   }
 }
 
 
 let point1 = new Point(1, 2);
-// now user can set x, but must use capital X so getter/setter variables don't
-// conflict w/ fields
-point1.X = 5;
+// now user can set x using lowercase x
+point1.x = 5;
 point1.draw();
