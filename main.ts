@@ -1,23 +1,29 @@
-let log = function (message) {
-  console.log(message);
+let drawPoint = (x, y) => {
+  // ...
 }
 
-//arrow style
-
-let doLog = (message) => {
-  console.log(message);
+//instead of passing many props, pass 1 obj w/ all related props
+let drawPoint = (point) => {
+  // ...
 }
 
-//another (less readable) formulation of arrow style
-let goLog = message => {
-  console.log(message);
+drawPoint({
+  x: 1,
+  y: 2
+})
+
+//inline notation kind of solves, but is verbose
+let drawPoint = (point: {x: number, y: number}) => {
+  // ...
 }
 
-//yet another formulation
-let coLog = (message) => console.log(message);
+//interfaces are prefered
+interface Point {
+  x: number,
+  y: number
+}
 
-//and another (less readable)
-let foLog = message => console.log(message);
-
-//with no params
-let feuxLog = () => console.log();
+//now point is it's own custom type
+let drawPoint = (point: Point) => {
+  // ...
+}
