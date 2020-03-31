@@ -1,4 +1,6 @@
 var Point = /** @class */ (function () {
+    // instead of making private fields and referring to this.x, we can add access
+    // modifiers to the constructor and remove the verbose assignments
     function Point(x, y) {
         this.x = x;
         this.y = y;
@@ -8,12 +10,7 @@ var Point = /** @class */ (function () {
     };
     return Point;
 }());
-// instead we use constructors, which take the params defined above
-// the question mark associated with the params means they are optional
-// js does not allow for multiple constructors
+// now something like 'point1.x = 5' would not work because x is private
+// only the draw() method is available
 var point1 = new Point();
-// we can get rid of the 'assign values' step
-//point1.x = 1;
-//point1.y = 2;
-// draw new point
 point1.draw();
