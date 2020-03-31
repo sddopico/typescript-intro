@@ -1,7 +1,5 @@
 
 class Point {
-// instead of making private fields and referring to this.x, we can add access
-// modifiers to the constructor and remove the verbose assignments
   constructor(private x?: number, private y?: number) {
 
   }
@@ -9,9 +7,23 @@ class Point {
   draw() {
     console.log(`X: ${this.x}, Y: ${this.y}`);
   }
+
+  // getters and setters expose fields to user, must use capital letter
+  get X() {
+    return this.x;
+  }
+
+  set X(value) {
+    if (value < 0)
+      throw new Error('value cannot be less than 0.');
+
+    this.x = value;
+  }
 }
 
-// now something like 'point1.x = 5' would not work because x is private
-// only the draw() method is available
-let point1 = new Point();
+
+let point1 = new Point(1, 2);
+// now user can set x, but must use capital X so getter/setter variables don't
+// conflict w/ fields
+point1.X = 5;
 point1.draw();
