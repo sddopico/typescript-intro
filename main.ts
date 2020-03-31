@@ -7,17 +7,20 @@ class Point {
     console.log(`X: ${this.x}, Y: ${this.y}`);
   }
 
-  getDistance(another: Point) {
-    // ...
+  constructor(x?: number, y?: number) {
+    this.x = x;
+    this.y = y;
   }
 }
 
-// this way of instantiating an object is verbose in ts 
-let point1 = new Point;
+// instead we use constructors, which take the params defined above
+// the question mark associated with the params means they are optional
+// js does not allow for multiple constructors
+let point1 = new Point();
 
-// assign values
-point1.x = 1;
-point1.y = 2;
+// we can get rid of the 'assign values' step
+//point1.x = 1;
+//point1.y = 2;
 
 // draw new point
 point1.draw();
